@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "67f5352afb3a584b3ea2715b"
+  },
+  "nombre": "Matemáticas",
+  "duracion": 60,
+  "esOnline": true
+},{
+  "_id": {
+    "$oid": "67f5352afb3a584b3ea2715d"
+  },
+  "nombre": "Lengua",
+  "duracion": 45,
+  "esOnline": true
+},{
+  "_id": {
+    "$oid": "67fe4a3d2b3cce7c29336c4a"
+  },
+  "nombre": "Quimica",
+  "duracion": 75,
+  "esOnline": true,
+  "__v": 0
+}]
