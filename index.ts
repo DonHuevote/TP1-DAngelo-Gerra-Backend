@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import { corsOptions } from './src/middlewear/corsOptions';
 import cors from 'cors';
 import claseRoutes from './src/routes/claseRoutes';
+import authRoutes from './src/routes/authRoutes';
 
 
 const app = express();
@@ -15,6 +16,8 @@ app.use(cors(corsOptions));
 
 // Usar las rutas de autenticación
 
+//Usar las rutas de autenticación
+app.use(authRoutes)
 
 // Usar las rutas de clases
 app.use(claseRoutes);
