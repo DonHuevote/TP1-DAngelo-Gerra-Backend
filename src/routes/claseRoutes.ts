@@ -1,11 +1,11 @@
-// /routes/claseRoutes.ts
+
 import { Router } from 'express';
 import { getClases, getClaseById, createClase, updateClase, deleteClase } from '../controller/claseController';
-import { authenticate } from '../middlewear/authMiddleware'; // Importa el middleware de autenticación
+import { authenticate } from '../middlewear/authMiddleware'; 
 
 const router = Router();
 
-// Aplica el middleware 'authenticate' a todas las rutas de clases
+
 router.get('/clases', authenticate, getClases);
 router.get('/clases/:id', authenticate, getClaseById);
 router.post('/clases', authenticate, createClase);
