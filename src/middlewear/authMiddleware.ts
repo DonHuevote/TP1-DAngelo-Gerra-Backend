@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express'; 
 import { verifyToken } from '../utils/jwtUtils';
-import '../types/express'; // Import the extended Request type
+import 'express'; // Import the extended Request type
 
 export const authenticate = (req: Request, res: Response, next: NextFunction) => {
   const token = req.headers.authorization?.split(' ')[1];
