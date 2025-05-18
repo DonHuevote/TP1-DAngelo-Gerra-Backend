@@ -15,8 +15,6 @@ COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
 
-RUN npx ts-node --version
-
 EXPOSE 3000
 
 CMD ["npx", "ts-node", "index.ts", "-d"]
