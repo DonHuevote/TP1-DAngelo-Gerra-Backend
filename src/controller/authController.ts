@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import User from '../models/userModel';
 import { generateToken } from '../utils/jwtUtils';
 
 // Register a new user
 export const register = async (req: Request, res: Response) => {
   console.log('Datos recibidos:', req.body); // Verifica los datos recibidos
-
+  
   const { userName, password, email } = req.body;
 
   try {
