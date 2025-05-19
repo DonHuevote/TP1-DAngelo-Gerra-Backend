@@ -5,7 +5,6 @@ import cors from 'cors';
 import claseRoutes from './src/routes/claseRoutes';
 import authRoutes from './src/routes/authRoutes';
 
-
 const app = express();
 
 // Middleware para parsear el cuerpo de las solicitudes en JSON
@@ -23,7 +22,7 @@ app.use(authRoutes)
 app.use(claseRoutes);
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://localhost:27017/ClaseDB')
+mongoose.connect("mongodb://mongo:27017/ClaseDB")
   .then(() => console.log('Conectado a MongoDB'))
   .catch((err) => console.error('Error al conectar a MongoDB:', err));
 

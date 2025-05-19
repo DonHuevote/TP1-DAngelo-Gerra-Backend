@@ -1,21 +1,24 @@
+# Etapa 1: instalar dependencias y compilar
+FROM node:18-alpine AS builder
 
-FROM node:18-alpine AS deps
-
-WORKDIR /app
+WORKDIR /app 	
 
 COPY package*.json ./
-
 RUN npm install
 
+COPY . .
+RUN npm run build  # esto debe generar /dist
+
+# Etapa 2: imagen liviana solo con lo necesario
 FROM node:18-alpine
 
 WORKDIR /app
 
-COPY --from=deps /app/node_modules ./node_modules
-
-COPY . .
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
 
 EXPOSE 3000
 
-CMD ["npx", "ts-node", "index.ts", "-d"]
+CMD ["node", "dist/index.js"]
 
