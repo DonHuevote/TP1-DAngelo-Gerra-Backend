@@ -1,0 +1,28 @@
+name: CI - Backend Express TypeScript
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repositorio
+      uses: actions/checkout@v3
+
+    - name: Usar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: Instalar dependencias
+      run: npm ci
+
+    - name: Compilar TypeScript
+      run: npm run build
+
